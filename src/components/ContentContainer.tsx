@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
-import { makeStyles } from '@mui/material';
 
 interface Props {
   children: React.ReactElement;
@@ -14,7 +13,7 @@ export default function ContentContainer(props: Props) {
       width: '100%',
       height: '100%'
     }}>
-      <img src="/assets/holding_hands.png" width="500" height="300" />
+      <img src="/assets/holding_hands.png" alt="temp crudely drawn pic" width="500" height="300" />
       {props.children}
     </Container>
   );
