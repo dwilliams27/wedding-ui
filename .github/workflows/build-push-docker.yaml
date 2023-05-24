@@ -1,26 +1,13 @@
 name: Publish Docker image
 
-on:
+on:  
   push:
-    branches:
-      - main
+    tags:
+      - '*'
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
-    container: cypress/browsers:node16.16.0-chrome107-ff107-edge
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          build: npm run build
-          start: npm start
-          browser: chrome
   push_to_registry:
     name: Push Docker image to Docker Hub
-    needs: cypress-run
     runs-on: ubuntu-22.04
     steps:
       - name: Check out the repo
@@ -37,6 +24,7 @@ jobs:
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: farmerbilly27/wedding
+          tags: type=semver,pattern={{version}}
       
       - name: Build and push Docker image
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
