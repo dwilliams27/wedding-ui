@@ -7,7 +7,7 @@ on:
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     container: cypress/browsers:node16.16.0-chrome107-ff107-edge
     steps:
       - name: Checkout
@@ -20,6 +20,31 @@ jobs:
           browser: chrome
   bump-package-version:
     needs: cypress-run
+    runs-on: ubuntu-latest
+    steps:
+        - name: 'Checkout source code'
+          uses: 'actions/checkout@v2'
+          with:
+            ref: ${{ github.ref }}
+        - name: 'cat package.json'
+          run: cat ./package.json
+        - name: 'Automated Version Bump'
+          id: version-bump
+          uses: 'phips28/gh-action-bump-version@master'
+          with:
+            tag-prefix: 'v'
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - name: 'cat package.json'
+          run: cat ./package.json
+        - name: 'Output Step'
+          env:
+            NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
+          run: echo "new tag $NEW_TAG"
+
+
+
+    needs: cypress-run
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -30,3 +55,4 @@ jobs:
           major-keywords: BREAKING CHANGE,major
           minor-keywords: feat,minor
           patch-keywords: fix,chore
+      token: ${{secrets.PAT}}
