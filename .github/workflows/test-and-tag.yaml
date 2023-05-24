@@ -22,6 +22,8 @@ jobs:
     needs: cypress-run
     runs-on: ubuntu-22.04
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Bump package version
         uses: jpb06/bump-package@v2.5.10
         with:
