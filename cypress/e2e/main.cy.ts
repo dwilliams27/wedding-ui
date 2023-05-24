@@ -2,7 +2,7 @@
 
 describe('Basic tests', () => {
   beforeEach(() => {
-    cy.visit('localhost:8080');
+    cy.visit('localhost:3000');
   })
 
   it('displays top nav bar', () => {
