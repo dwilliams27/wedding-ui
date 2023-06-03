@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json package.json
 
-ENV HUSKY=0
+RUN npm set-script prepare ""
 
 RUN npm install
 
