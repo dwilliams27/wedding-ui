@@ -58,15 +58,15 @@ export default function FloatingHeader() {
             </IconButton>
             <ThemeProvider theme={theme}>
               <Box sx={{ display: 'flex', width: '100%' }}>
-                <Button sx={{width: '33.33%'}}>
+                <Button sx={{width: { xs: '28%', sm: '33.33%' }}}>
                   <Typography
                     variant="h6"
-                    noWrap
                     component="a"
                     sx={{
                       mr: 2,
                       fontFamily: 'TheSeasons',
                       fontWeight: 700,
+                      fontSize: { xs: '16px', sm: '18px', md: '20px', lg: '24px' },
                       letterSpacing: '.3rem',
                       color: 'white',
                       textDecoration: 'none',
@@ -84,6 +84,7 @@ export default function FloatingHeader() {
                       mr: 2,
                       fontFamily: 'TheSeasons',
                       fontWeight: 700,
+                      fontSize: { xs: '16px', sm: '18px', md: '20px', lg: '24px' },
                       letterSpacing: '.3rem',
                       color: 'white',
                       textDecoration: 'none'
@@ -95,12 +96,12 @@ export default function FloatingHeader() {
                 <Button sx={{width: '33.33%'}}>
                   <Typography
                     variant="h6"
-                    noWrap
                     component="a"
                     sx={{
                       mr: 2,
                       fontFamily: 'TheSeasons',
                       fontWeight: 700,
+                      fontSize: { xs: '16px', sm: '18px', md: '20px', lg: '24px' },
                       letterSpacing: '.3rem',
                       color: 'white',
                       textDecoration: 'none',

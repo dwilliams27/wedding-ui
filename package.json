@@ -7,13 +7,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cypress:open": "cypress open"
+    "lint": "eslint .",
+    "cypress:open": "cypress open",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "ignorePatterns": ["build/", "public/"]
   },
   "browserslist": {
     "production": [
@@ -28,7 +31,8 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^12.13.0"
+    "cypress": "^12.13.0",
+    "husky": "^8.0.3"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
