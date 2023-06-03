@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
-import { Box, Stack, TextField, ThemeProvider, Typography, createTheme, responsiveFontSizes } from '@mui/material';
-import TheSeasons from '../fonts/theseasons-reg.ttf';
+import { Box, Stack, Typography } from '@mui/material';
 
 interface Props {
   children: React.ReactElement;
