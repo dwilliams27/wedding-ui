@@ -47,25 +47,26 @@ export default function FloatingHeader() {
       <CssBaseline />
       <ElevationScroll>
         <AppBar style={{ background: 'rgba(100, 100, 100, 0.3)' }}>
-          <Toolbar>
+          <Toolbar disableGutters>
             <IconButton
               color="inherit"
               edge="start"
-              sx={{ mr: 2 }}
+              sx={{ mr: { sm: 2 }, ml: 0.25 }}
             >
               <img id='main-logo' src="favicon.ico" alt="logo" width="64" height="64"/>
             </IconButton>
             <ThemeProvider theme={theme}>
-              <Box sx={{ display: 'flex', width: '100%' }}>
-                <Button sx={{width: { xs: '28%', sm: '33.33%' }}}>
+              <Box sx={{ display: 'flex', width: '100%', mr: 2 }}>
+                <Button sx={{ width: '33%' }}>
                   <Typography
                     variant="h6"
                     component="a"
+                    
                     sx={{
-                      mr: 2,
                       fontFamily: 'TheSeasons',
                       fontWeight: 700,
-                      fontSize: { xs: '16px', sm: '18px', md: '20px', lg: '24px' },
+                      fontSize: { xs: '14px', sm: '18px', md: '20px', lg: '24px' },
+                      paddingRight: { xs: 0, sm: '8px' },
                       letterSpacing: '.3rem',
                       color: 'white',
                       textDecoration: 'none',
@@ -80,10 +81,9 @@ export default function FloatingHeader() {
                     noWrap
                     component="a"
                     sx={{
-                      mr: 2,
                       fontFamily: 'TheSeasons',
                       fontWeight: 700,
-                      fontSize: { xs: '16px', sm: '18px', md: '20px', lg: '24px' },
+                      fontSize: { xs: '14px', sm: '18px', md: '20px', lg: '24px' },
                       letterSpacing: '.3rem',
                       color: 'white',
                       textDecoration: 'none'
@@ -97,10 +97,9 @@ export default function FloatingHeader() {
                     variant="h6"
                     component="a"
                     sx={{
-                      mr: 2,
                       fontFamily: 'TheSeasons',
                       fontWeight: 700,
-                      fontSize: { xs: '16px', sm: '18px', md: '20px', lg: '24px' },
+                      fontSize: { xs: '14px', sm: '18px', md: '20px', lg: '24px' },
                       letterSpacing: '.3rem',
                       color: 'white',
                       textDecoration: 'none',
