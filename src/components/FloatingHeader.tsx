@@ -3,8 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import LeftDrawer from './LeftDrawer';
-import { Box, Button, Container, Grid, IconButton, ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
+import { Box, Button, IconButton, ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 import TheSeasons from '../fonts/theseasons-reg.ttf';
 
 interface ScrollProps {
