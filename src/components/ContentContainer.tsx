@@ -12,9 +12,11 @@ export default function ContentContainer(props: Props) {
       backgroundSize: '100% 100%',
       backgroundImage: 'url(/assets/background.png)',
       width: '100%',
-      height: '100%'
+      height: '100%',
+      paddingLeft: 0,
+      paddingRight: 0
     }}>
-      <Grid 
+      <Grid
         container
         direction="column"
         justifyContent="center"

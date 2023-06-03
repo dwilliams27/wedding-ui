@@ -4,7 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import LeftDrawer from './LeftDrawer';
-import { Container, Grid, ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
+import { Box, Button, Container, Grid, IconButton, ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 import TheSeasons from '../fonts/theseasons-reg.ttf';
 
 interface ScrollProps {
@@ -23,6 +23,9 @@ export default function FloatingHeader() {
   let theme = createTheme({
     typography: {
       fontFamily: 'TheSeasons',
+      button: {
+        textTransform: 'none'
+      }
     },
     components: {
       MuiCssBaseline: {
@@ -41,68 +44,77 @@ export default function FloatingHeader() {
   });
   theme = responsiveFontSizes(theme);
   return (
-    <>
+    <div style={{ marginTop: '-100px' }}>
       <CssBaseline />
       <ElevationScroll>
-        <AppBar>
-          <Container maxWidth="xl">
-            <Toolbar>
-              <img src="favicon.ico" alt="icon" width="64" height="64"/>
-              <ThemeProvider theme={theme}>
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    display: { xs: 'none', md: 'flex' },
-                    fontFamily: 'TheSeasons',
-                    fontWeight: 700,
-                    letterSpacing: '.3rem',
-                    color: 'inherit',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Our Story
-                </Typography>
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    display: { xs: 'none', md: 'flex' },
-                    fontFamily: 'TheSeasons',
-                    fontWeight: 700,
-                    letterSpacing: '.3rem',
-                    color: 'inherit',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Venue
-                </Typography>
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    display: { xs: 'none', md: 'flex' },
-                    fontFamily: 'TheSeasons',
-                    fontWeight: 700,
-                    letterSpacing: '.3rem',
-                    color: 'inherit',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Additional Details
-                </Typography>
-              </ThemeProvider>
-            </Toolbar>
-          </Container>
+        <AppBar style={{ background: 'rgba(100, 100, 100, 0.3)' }}>
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              edge="start"
+              sx={{ mr: 2 }}
+            >
+              <img id='main-logo' src="favicon.ico" alt="logo" width="64" height="64"/>
+            </IconButton>
+            <ThemeProvider theme={theme}>
+              <Box sx={{ display: 'flex', width: '100%' }}>
+                <Button sx={{width: '33.33%'}}>
+                  <Typography
+                    variant="h6"
+                    noWrap
+                    component="a"
+                    sx={{
+                      mr: 2,
+                      fontFamily: 'TheSeasons',
+                      fontWeight: 700,
+                      letterSpacing: '.3rem',
+                      color: 'white',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Our Story
+                  </Typography>
+                </Button>
+                <Button sx={{width: '33.33%'}}>
+                  <Typography
+                    variant="h6"
+                    noWrap
+                    component="a"
+                    sx={{
+                      mr: 2,
+                      fontFamily: 'TheSeasons',
+                      fontWeight: 700,
+                      letterSpacing: '.3rem',
+                      color: 'white',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    Venue
+                  </Typography>
+                </Button>
+                <Button sx={{width: '33.33%'}}>
+                  <Typography
+                    variant="h6"
+                    noWrap
+                    component="a"
+                    sx={{
+                      mr: 2,
+                      fontFamily: 'TheSeasons',
+                      fontWeight: 700,
+                      letterSpacing: '.3rem',
+                      color: 'white',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Additional Details
+                  </Typography>
+                </Button>
+              </Box>
+            </ThemeProvider>
+          </Toolbar>
         </AppBar>
       </ElevationScroll>
       <Toolbar />
-    </>
+    </div>
   );
 }
