@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY package.json package.json
 
+ENV HUSKY=0
+
 RUN npm install
 
 COPY . .
