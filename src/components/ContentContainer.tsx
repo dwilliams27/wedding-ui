@@ -22,12 +22,12 @@ export default function ContentContainer(props: Props) {
       >
         <Box
           sx={{
-            // 3143 × 4715 (2/3)
+            // (0.852 1.173)
             width: { xs: 800, sm: 1200 },
-            height: { xs: 1066.66, sm: 1600 },
-            paddingTop: { xs: '600px', sm: '800px' },
+            height: { xs: 938, sm: 1408 },
+            paddingTop: { xs: '600px', md: '700px' },
             backgroundSize: '100% 100%',
-            backgroundImage: 'url(/assets/bg_1.jpg)',
+            backgroundImage: { xs: 'url(/assets/bg_1_cropped_dim.jpg)' },
           }}
         >
             <Typography
@@ -54,7 +54,7 @@ export default function ContentContainer(props: Props) {
               sx={{
                 fontFamily: 'TheSeasons',
                 fontWeight: 500,
-                fontSize: { xs: '32px', sm: '32px' },
+                fontSize: { xs: '20px', sm: '32px' },
                 fontStyle: 'italic',
                 lineHeight: 1,
                 letterSpacing: '.3rem',
