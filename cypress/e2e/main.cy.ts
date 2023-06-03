@@ -6,6 +6,6 @@ describe('Basic tests', () => {
   })
 
   it('displays top nav bar', () => {
-    cy.get('.main-logo').should('exist');
+    cy.get('#main-logo').should('exist');
   })
 })
