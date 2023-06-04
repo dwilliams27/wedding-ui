@@ -49,7 +49,7 @@ export default function ContentContainer(props: Props) {
             // (0.852 1.173)
             width: { xs: 700, sm: 1200 },
             height: { xs: 821, sm: 1408 },
-            paddingTop: { xs: '600px', md: '900px' },
+            paddingTop: { xs: '600px', sm: '900px' },
             backgroundSize: '100% 100%',
             backgroundImage: { xs: 'url(/assets/bg_1_cropped_fade.jpg)' },
             marginBottom: '-1px'
@@ -94,11 +94,29 @@ export default function ContentContainer(props: Props) {
           sx={{
             // (0.852 1.173)
             width: { xs: 800, sm: 1200 },
-            height: { xs: 938, sm: 1408 },
-            backgroundColor: '#39422e'
+            height: { xs: 1600 },
+            backgroundColor: '#39422e',
+            overflow: 'hidden',
+            position: 'relative'
           }}
         >
-          <Stack sx={{ alignItems: 'center' }}>
+          <Box
+            component="img"
+            sx={{
+              opacity: 0.1,
+              position: 'absolute',
+              left: 0,
+              top: '300px',
+              width: '100%',
+              height: 'auto'
+            }}
+            alt="David and amanda proposal."
+            src="/assets/flower_bg.png"
+          />
+          <Stack sx={{ 
+            alignItems: 'center',
+            position: 'relative'
+          }}>
             <Box
               // 1.044
               component="img"
@@ -136,7 +154,7 @@ export default function ContentContainer(props: Props) {
                   fontSize: { xs: '18px' },
                   width: '40%',
                   lineHeight: 1,
-                  letterSpacing: '.3rem',
+                  letterSpacing: '.15rem',
                   color: 'white',
                   textDecoration: 'none',
                 }}
@@ -146,11 +164,55 @@ export default function ContentContainer(props: Props) {
                 Their first date was in a small Korean restaurant in Georgetown, DC, filled with laughter and too much spicy pork bulgogi. 
                 Despite starting off long distance, their love continued to grow, fostered by Facetime calls and Amtrak trips. 
                 <br /><br />
+                <Box
+                  // 1.5
+                  component="img"
+                  sx={{
+                    width: '225px',
+                    height: '150px',
+                    borderColor: 'white',
+                    borderStyle: 'solid',
+                    borderWidth: '12px 8px 25px 8px',
+                    marginTop: '12px',
+                    marginBottom: '8px'
+                  }}
+                  alt="David and amanda proposal."
+                  src="/assets/hal_pics.jpeg"
+                />
+                <br />
                 After four years together, David proposed to Amanda amongst volcanic rock and clouds, marking the beginnings of a new chapter. 
                 <br /><br />
                 We are so excited to have you with us as we celebrate the start of our next adventure together!
               </Typography>
             </ThemeProvider>
+            <Box
+              // 1.5
+              component="img"
+              sx={{
+                width: '225px',
+                height: '150px',
+                borderColor: 'white',
+                borderStyle: 'solid',
+                borderWidth: '12px 8px 25px 8px',
+                marginTop: '16px'
+              }}
+              alt="David and amanda in boldrock."
+              src="/assets/dav_am_br.jpg"
+            />
+            <Box
+              // 1.5
+              component="img"
+              sx={{
+                width: '150px',
+                height: '200px',
+                borderColor: 'white',
+                borderStyle: 'solid',
+                borderWidth: '12px 8px 40px 8px',
+                marginTop: '16px'
+              }}
+              alt="David and amanda proposal."
+              src="/assets/kl_crop.jpeg"
+            />
           </Stack>
         </Box>
         <div>
