@@ -33,8 +33,6 @@ export default function ContentContainer(props: Props) {
   theme = responsiveFontSizes(theme);
   return (
     <Container sx={{
-      backgroundSize: '100% 100%',
-      backgroundImage: 'url(/assets/background.png)',
       width: '100%',
       height: '100%',
       paddingLeft: 0,
@@ -46,12 +44,12 @@ export default function ContentContainer(props: Props) {
       >
         <Box
           sx={{
-            // (0.852 1.173)
-            width: { xs: 700, sm: 1200 },
-            height: { xs: 821, sm: 1408 },
-            paddingTop: { xs: '600px', sm: '900px' },
+            // 1.3
+            width: { xs: 550, sm: 1200 },
+            height: { xs: 715, sm: 1560 },
+            paddingTop: { xs: '530px', sm: '900px' },
             backgroundSize: '100% 100%',
-            backgroundImage: { xs: 'url(/assets/bg_1_cropped_fade.jpg)' },
+            backgroundImage: { xs: 'url(/assets/bg_2_cropped.jpg)' },
             marginBottom: '-1px'
           }}
         >
@@ -91,10 +89,22 @@ export default function ContentContainer(props: Props) {
           </Typography>
         </Box>
         <Box
+          // 1.044
+          component="div"
+          sx={{
+            width: '1200px',
+            height: '50px',
+            position: 'absolute',
+            left: 0,
+            bottom: -5,
+            background: 'linear-gradient(#00000000, #39422eFF)'
+          }}
+        />
+        <Box
           sx={{
             // (0.852 1.173)
             width: { xs: 800, sm: 1200 },
-            height: { xs: 1600 },
+            height: { xs: 1475 },
             backgroundColor: '#39422e',
             overflow: 'hidden',
             position: 'relative'
@@ -214,12 +224,97 @@ export default function ContentContainer(props: Props) {
               src="/assets/kl_crop.jpeg"
             />
           </Stack>
+          <Box
+            // 1.044
+            component="div"
+            sx={{
+              width: '1200px',
+              height: '30px',
+              position: 'absolute',
+              left: 0,
+              bottom: 0,
+              background: 'linear-gradient(#39422e, #abab84)'
+            }}
+          />
         </Box>
-        <div>
-          <img src="/assets/holding_hands.png" alt="temp crudely drawn pic" width="500" />
-        </div>
+        
+        <Box
+          sx={{
+            // (0.852 1.173)
+            width: { xs: 800, sm: 1200 },
+            height: { xs: 950 },
+            backgroundColor: '#abab84',
+            overflow: 'hidden',
+            position: 'relative'
+          }}
+        >
+          <Stack 
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Typography
+              variant="h6"
+              component="a"
+              sx={{
+                fontFamily: 'TheSeasons',
+                fontWeight: 500,
+                fontSize: { xs: '64px' },
+                fontStyle: 'italic',
+                lineHeight: 1,
+                letterSpacing: '.3rem',
+                color: 'white',
+                textDecoration: 'none',
+                marginTop: '30px',
+                marginBottom: '50px'
+              }}
+            >
+              Venue
+            </Typography>
+            <Box
+              // 1.5
+              component="img"
+              sx={{
+                width: '350px',
+                height: '233px',
+                borderColor: 'gray',
+                borderStyle: 'solid',
+                borderWidth: '2px 2px 2px 2px',
+              }}
+              alt="Pic of the market."
+              src="/assets/market.jpeg"
+            />
+            <Box
+              // 1.73
+              component="img"
+              sx={{
+                width: '228px',
+                height: '132px',
+                marginTop: '50px'
+              }}
+              alt="Pic of the market."
+              src="/assets/market_text.png"
+            />
+            <Typography
+              variant="h6"
+              component="a"
+              sx={{
+                fontFamily: 'TheSeasons',
+                fontWeight: 500,
+                fontSize: { xs: '40px' },
+                fontStyle: 'italic',
+                lineHeight: 1,
+                letterSpacing: '.3rem',
+                color: 'white',
+                textDecoration: 'none',
+                marginTop: '200px',
+                width: '300px'
+              }}
+            >
+              Additional Details Coming Soon
+            </Typography>
+          </Stack>
+        </Box>
       </Stack>
-      {props.children}
     </Container>
   );
 }

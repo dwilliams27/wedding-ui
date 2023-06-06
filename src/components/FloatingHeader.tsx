@@ -75,7 +75,7 @@ export default function FloatingHeader() {
                     Our Story
                   </Typography>
                 </Button>
-                <Button sx={{width: '33.33%'}}>
+                <Button sx={{width: '33.33%', justifyContent: 'left'}}>
                   <Typography
                     variant="h6"
                     noWrap
