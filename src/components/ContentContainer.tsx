@@ -97,7 +97,7 @@ export default function ContentContainer(props: Props) {
             position: 'absolute',
             left: 0,
             bottom: -5,
-            background: 'linear-gradient(#00000000, #39422eFF)'
+            background: 'linear-gradient(rgba(0,0,0,0), rgba(57, 66, 46, 1))'
           }}
         />
         <Box
@@ -233,7 +233,7 @@ export default function ContentContainer(props: Props) {
               position: 'absolute',
               left: 0,
               bottom: 0,
-              background: 'linear-gradient(#39422e, #abab84)'
+              background: 'linear-gradient(rgb(57, 66, 46), rgb(171, 171, 132))'
             }}
           />
         </Box>
