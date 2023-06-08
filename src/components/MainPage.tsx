@@ -3,11 +3,7 @@ import Container from '@mui/material/Container';
 import { Box, Stack, ThemeProvider, Typography, createTheme, responsiveFontSizes } from '@mui/material';
 import BeVietnam from '../fonts/BeVietnamPro-Regular.ttf';
 
-interface Props {
-  children: React.ReactElement;
-}
-
-export default function ContentContainer(props: Props) {
+export default function MainPage() {
   let theme = createTheme({
     typography: {
       fontFamily: 'BeVietnam',
@@ -134,7 +130,7 @@ export default function ContentContainer(props: Props) {
                 height: '365px',
               }}
               alt="David and amanda in black and white."
-              src="/assets/bw_flower_frame.png"
+              src="/assets/holding_hands.png"
             />
             <Typography
               variant="h6"
