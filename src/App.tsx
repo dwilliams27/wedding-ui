@@ -1,16 +1,11 @@
 import './App.css';
-import FloatingHeader from './components/FloatingHeader';
+import TopBar from './components/TopBar';
 import ContentContainer from './components/ContentContainer';
-import React from 'react';
 
 function App() {
   return (
     <div className="App">
-      <FloatingHeader>
-        <div>
-          Hello1
-        </div>
-      </FloatingHeader>
+      <TopBar />
       <ContentContainer>
         <p>
           Hello

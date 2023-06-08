@@ -1,14 +1,10 @@
 import * as React from 'react';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Slide, ThemeProvider, createTheme, responsiveFontSizes, styled, useScrollTrigger, useTheme } from '@mui/material';
-import TheSeasons from '../fonts/theseasons-reg.ttf';
+import { Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Slide, ThemeProvider, createTheme, styled, useScrollTrigger } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import ClearIcon from '@mui/icons-material/Clear';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 
 const drawerWidth = 240;
 
@@ -60,8 +56,17 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 
-export default function FloatingHeader(props: Props) {
-  const theme = useTheme();
+export default function TopBar() {
+  const theme = createTheme({
+    typography: {
+      fontFamily: [
+        'Dancing Script',
+        'cursive',
+      ].join(','),
+      fontSize: 60
+    },
+  });
+
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -76,7 +81,7 @@ export default function FloatingHeader(props: Props) {
     <React.Fragment>
       <div style={{marginTop: '-112px'}}>
         <CssBaseline />
-        <HideOnScroll {...props}>
+        <HideOnScroll>
           <AppBar style={{ background: 'rgba(100, 100, 100, 0.3)' }}>
             <Toolbar disableGutters>
               <IconButton
@@ -93,7 +98,7 @@ export default function FloatingHeader(props: Props) {
                 sx={{ mr: 2, marginLeft: 'auto', ...(open && { display: 'none' }) }}
                 onClick={handleDrawerOpen}
               >
-                <MenuIcon  fontSize="inherit"/>
+                <MenuIcon fontSize="inherit"/>
               </IconButton>
             </Toolbar>
           </AppBar>
@@ -113,12 +118,20 @@ export default function FloatingHeader(props: Props) {
               <ClearIcon />
             </IconButton>
           </DrawerHeader>
-          <Divider />
-          <List sx={{ height: '100vh', backgroundColor: '#e0ddd5' }}>
+          <List sx={{ 
+            height: '100vh', 
+            backgroundColor: '#e0ddd5', 
+            display: 'flex', 
+            justifyContent: 'center', 
+            flexDirection: 'column', 
+            marginTop: '-1px' 
+          }}>
             {['Our Story', 'Venue', 'Additional Details'].map((text, index) => (
-              <ListItem key={text} disablePadding>
+              <ListItem key={text} sx={{ marginBottom: '20px' }} disablePadding>
                 <ListItemButton>
-                  <ListItemText primary={text} sx={{ textAlign: 'center', fontSize: '4rem' }}/>
+                <ThemeProvider theme={theme}>
+                  <ListItemText primary={text} sx={{ textAlign: 'center' }}/>
+                </ThemeProvider>
                 </ListItemButton>
               </ListItem>
             ))}

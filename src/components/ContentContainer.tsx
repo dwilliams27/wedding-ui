@@ -92,7 +92,6 @@ export default function ContentContainer(props: Props) {
           // 1.044
           component="div"
           sx={{
-            width: '1200px',
             height: '50px',
             position: 'absolute',
             left: 0,
@@ -228,7 +227,6 @@ export default function ContentContainer(props: Props) {
             // 1.044
             component="div"
             sx={{
-              width: '1200px',
               height: '30px',
               position: 'absolute',
               left: 0,
