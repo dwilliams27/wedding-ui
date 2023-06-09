@@ -1,20 +1,19 @@
 import './App.css';
-import TopBar from './components/TopBar';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from './components/MainPage';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainPage />,
-  },
-]);
+import OurStory from './components/OurStory';
+import Venue from './components/Venue';
 
 function App() {
   return (
     <div className="App">
-      <TopBar />
-      <RouterProvider router={router} />
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/our-story" element={<OurStory />} />
+          <Route path="/venue" element={<Venue />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

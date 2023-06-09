@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Slide, ThemeProvider, createTheme, styled, useScrollTrigger } from '@mui/material';
+import { Drawer, IconButton, Link, List, ListItem, ListItemButton, ListItemText, Slide, ThemeProvider, createTheme, styled, useScrollTrigger } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import ClearIcon from '@mui/icons-material/Clear';
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -57,6 +58,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 
 export default function TopBar() {
+  const navigate = useNavigate();
+
   const theme = createTheme({
     typography: {
       fontFamily: [
@@ -76,7 +79,12 @@ export default function TopBar() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  
+
+  function navigateTo(page: string) {
+    handleDrawerClose();
+    setTimeout(() => navigate(page), 200);
+  }
+
   return (
     <React.Fragment>
       <div style={{marginTop: '-112px'}}>
@@ -87,6 +95,7 @@ export default function TopBar() {
               <IconButton
                 color="inherit"
                 edge="start"
+                onClick={() => navigateTo('/')}
                 sx={{ mr: { sm: 2 }, ml: 0.5 }}
               >
                 <img id='main-logo' src="favicon.ico" alt="logo" width="64" height="64"/>
@@ -126,12 +135,12 @@ export default function TopBar() {
             flexDirection: 'column', 
             marginTop: '-1px' 
           }}>
-            {['Our Story', 'Venue', 'Additional Details'].map((text, index) => (
-              <ListItem key={text} sx={{ marginBottom: '20px' }} disablePadding>
-                <ListItemButton>
-                <ThemeProvider theme={theme}>
-                  <ListItemText primary={text} sx={{ textAlign: 'center' }}/>
-                </ThemeProvider>
+            {[{ text: 'Our Story', page: '/our-story'}, { text: 'Venue', page: '/venue' }, { text: 'Additional Details', page: '/additional-details' }].map((link, index) => (
+              <ListItem key={link.text} sx={{ marginBottom: '20px' }} disablePadding>
+                <ListItemButton onClick={() => navigateTo(link.page)}>
+                  <ThemeProvider theme={theme}>
+                    <ListItemText primary={link.text} sx={{ textAlign: 'center' }}/>
+                  </ThemeProvider>
                 </ListItemButton>
               </ListItem>
             ))}
