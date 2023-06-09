@@ -90,7 +90,7 @@ export default function TopBar() {
       <div style={{marginTop: '-112px'}}>
         <CssBaseline />
         <HideOnScroll>
-          <AppBar style={{ background: 'rgba(100, 100, 100, 0.3)' }}>
+          <AppBar style={{ background: 'rgb(56, 56, 59)' }}>
             <Toolbar disableGutters>
               <IconButton
                 color="inherit"
