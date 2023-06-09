@@ -4,10 +4,6 @@ import TopBar from "./TopBar";
 import { Divider, Fade, Typography } from "@mui/material";
 import BeVietnam from '../fonts/BeVietnamPro-Regular.ttf';
 
-type Window = {
-  fadeIn(): any
-}
-
 export default function OurStory() {
   let bvtheme = createTheme({
     typography: {
@@ -57,19 +53,16 @@ export default function OurStory() {
               Our Story
             </Typography>
           </ThemeProvider>
-          
-            <Box
-              // 1.044
-              component="img"
-              sx={{
-                width: '350px',
-                height: '365px',
-              }}
-              alt="David and amanda in black and white."
-              src="/assets/bw_flower_frame.png"
-            />
-          
-          
+          <Box
+            // 1.044
+            component="img"
+            sx={{
+              width: '350px',
+              height: '365px',
+            }}
+            alt="David and amanda in black and white."
+            src="/assets/bw_flower_frame.png"
+          />
           <Divider flexItem sx={{ marginTop: '50px', marginBottom: '50px' }}/>
           <ThemeProvider theme={contentTheme}>
             <Typography sx={{ fontSize: '1.25rem' }}>
