@@ -65,9 +65,8 @@ export default function TopBar() {
 
   const [displayBackground, setDisplayBackground] = React.useState(false);
 
-  let prevY = 0;
-
   useEffect(() => {
+    let prevY = 0;
     const listenScrollEvent = (e: Event) => {
       if (window.scrollY < prevY) {
         if (window.scrollY < 10) {
