@@ -67,7 +67,7 @@ export default function TopBar() {
 
   let prevY = 0;
 
-  function listenScrollEvent(e: Event) {
+  const listenScrollEvent = (e: Event) => {
     if (window.scrollY < prevY) {
       if (window.scrollY < 10) {
         setDisplayBackground(false);
@@ -82,7 +82,7 @@ export default function TopBar() {
 
   useEffect(() => {
     window.addEventListener('scroll', listenScrollEvent)
-  }, []);
+  }, [listenScrollEvent]);
 
   return (
     <React.Fragment>
