@@ -3,11 +3,10 @@ import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Slide, ThemeProvider, createTheme, styled, useScrollTrigger } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
+import MuiAppBar from '@mui/material/AppBar';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useNavigate } from "react-router-dom";
-
-const drawerWidth = 240;
+import { useEffect } from 'react';
 
 interface Props {
   children: React.ReactElement;
@@ -20,32 +19,11 @@ function HideOnScroll(props: Props) {
   });
 
   return (
-    <Slide appear={false} direction="down" in={!trigger}>
+    <Slide onChange={(e: any) => {console.log(e)}} appear={false} direction="down" in={!trigger}>
       {children}
     </Slide>
   );
 }
-
-interface AppBarProps extends MuiAppBarProps {
-  open?: boolean;
-}
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme, open }) => ({
-  transition: theme.transitions.create(['margin', 'width'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginRight: drawerWidth,
-  }),
-}));
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -85,13 +63,40 @@ export default function TopBar() {
     setTimeout(() => navigate(page), 200);
   }
 
+  const [displayBackground, setDisplayBackground] = React.useState(false);
+
+  let prevY = 0;
+
+  const listenScrollEvent = (e: Event) => {
+    if (window.scrollY < prevY) {
+      if (window.scrollY < 10) {
+        setDisplayBackground(false);
+      }
+    }
+    if (window.scrollY > 10) {
+      setDisplayBackground(true);
+    }
+    
+    prevY = window.scrollY;
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', listenScrollEvent)
+  }, []);
+
   return (
     <React.Fragment>
       <div style={{marginTop: '-112px'}}>
         <CssBaseline />
         <HideOnScroll>
-          <AppBar style={{ background: 'rgb(56, 56, 59)' }}>
-            <Toolbar disableGutters>
+          <MuiAppBar sx={{ backgroundColor: "rgb(0, 0, 0, 0)", boxShadow: 0 }}>
+            <Toolbar sx={{ 
+                backgroundColor: displayBackground ? "#05200a" : "rgba(0, 0, 0, 0)",
+                transition: "all 0.5s ease",
+                WebkitTransition: "all 0.5s ease",
+                MozTransition: "all 0.5s ease"
+              }}
+            disableGutters>
               <IconButton
                 color="inherit"
                 edge="start"
@@ -104,13 +109,21 @@ export default function TopBar() {
                 size="large"
                 color="inherit"
                 aria-label="menu"
-                sx={{ mr: 2, marginLeft: 'auto', ...(open && { display: 'none' }) }}
+                sx={{ 
+                  mr: 2, 
+                  marginLeft: 
+                  'auto',
+                  ...(open && { display: 'none' }),
+                  transition: "all 0.5s ease",
+                  WebkitTransition: "all 0.5s ease",
+                  MozTransition: "all 0.5s ease"
+                }}
                 onClick={handleDrawerOpen}
               >
-                <MenuIcon fontSize="inherit"/>
+                <MenuIcon fontSize="inherit" sx={{...(!displayBackground && {color: "#05200a"})}}/>
               </IconButton>
             </Toolbar>
-          </AppBar>
+          </MuiAppBar>
         </HideOnScroll>
         <Toolbar />
         <DrawerHeader />
