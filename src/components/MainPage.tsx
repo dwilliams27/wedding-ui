@@ -48,11 +48,11 @@ export default function MainPage() {
               // 1.044
               component="img"
               sx={{
-                width: '550px',
-                height: '715px',
+                width: '800px',
+                height: '1200px',
               }}
               alt="Market at grelen"
-              src="/assets/primary_bw.jpg"
+              src="/assets/ad_field.jpg"
             />
             <ThemeProvider theme={theme}>
               <Typography

@@ -7,6 +7,7 @@ import MuiAppBar from '@mui/material/AppBar';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
+import { Fonts } from '../utils/Fonts';
 
 interface Props {
   children: React.ReactElement;
@@ -40,11 +41,8 @@ export default function TopBar() {
 
   const theme = createTheme({
     typography: {
-      fontFamily: [
-        'Dancing Script',
-        'cursive',
-      ].join(','),
-      fontSize: 60
+      fontFamily: Fonts.Cormorant,
+      fontSize: 50
     },
   });
 

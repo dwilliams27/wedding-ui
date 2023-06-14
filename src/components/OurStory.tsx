@@ -58,10 +58,10 @@ export default function OurStory() {
             component="img"
             sx={{
               width: '350px',
-              height: '365px',
+              height: '475px',
             }}
             alt="David and amanda in black and white."
-            src="/assets/bw_flower_frame.png"
+            src="/assets/bw_original.jpg"
           />
           <Divider flexItem sx={{ marginTop: '50px', marginBottom: '50px' }}/>
           <ThemeProvider theme={contentTheme}>
