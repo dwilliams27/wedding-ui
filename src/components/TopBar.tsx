@@ -67,7 +67,7 @@ export default function TopBar() {
 
   let prevY = 0;
 
-  const listenScrollEvent = (e: Event) => {
+  function listenScrollEvent(e: Event) {
     if (window.scrollY < prevY) {
       if (window.scrollY < 10) {
         setDisplayBackground(false);
