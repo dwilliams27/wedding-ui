@@ -1,6 +1,6 @@
 import React from "react";
 import TopBar from "./TopBar";
-import { Box, Stack } from "@mui/system";
+import { Stack } from "@mui/system";
 import { Divider, Fade, Typography, ThemeProvider, createTheme } from "@mui/material";
 import { Fonts } from "../utils/Fonts";
 
