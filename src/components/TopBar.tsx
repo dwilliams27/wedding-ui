@@ -42,7 +42,7 @@ export default function TopBar() {
   const theme = createTheme({
     typography: {
       fontFamily: Fonts.Cormorant,
-      fontSize: 50
+      fontSize: 30
     },
   });
 
@@ -82,7 +82,7 @@ export default function TopBar() {
 
   return (
     <React.Fragment>
-      <div style={{marginTop: '-112px'}}>
+      <div style={{}}>
         <CssBaseline />
         <HideOnScroll>
           <MuiAppBar sx={{ backgroundColor: "rgb(0, 0, 0, 0)", boxShadow: 0 }}>
@@ -121,7 +121,6 @@ export default function TopBar() {
             </Toolbar>
           </MuiAppBar>
         </HideOnScroll>
-        <Toolbar />
         <DrawerHeader />
         <Drawer
           sx={{
@@ -145,7 +144,7 @@ export default function TopBar() {
             marginTop: '-1px' 
           }}>
             {[{ text: 'Our Story', page: '/our-story'}, { text: 'Venue', page: '/venue' }, { text: 'Additional Details', page: '/additional-details' }].map((link, index) => (
-              <ListItem key={link.text} sx={{ marginBottom: '20px' }} disablePadding>
+              <ListItem key={link.text} disablePadding>
                 <ListItemButton onClick={() => navigateTo(link.page)}>
                   <ThemeProvider theme={theme}>
                     <ListItemText primary={link.text} sx={{ textAlign: 'center' }}/>

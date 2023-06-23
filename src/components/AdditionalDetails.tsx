@@ -1,7 +1,7 @@
 import React from "react";
 import TopBar from "./TopBar";
-import { Box, Stack, ThemeProvider, createTheme } from "@mui/system";
-import { Divider, Fade, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/system";
+import { Divider, Fade, Typography, ThemeProvider, createTheme } from "@mui/material";
 import { Fonts } from "../utils/Fonts";
 
 export default function AdditionalDetails() {
@@ -30,23 +30,13 @@ export default function AdditionalDetails() {
         }}>
           <ThemeProvider theme={headerTheme}>
             <Typography sx={{ marginTop: '100px', fontSize: '3rem' }}>
-              Additional Details
+              ADDITIONAL DETAILS
             </Typography>
           </ThemeProvider>
-          <Box
-            // 1.044
-            component="img"
-            sx={{
-              width: '350px',
-              height: '365px',
-            }}
-            alt="Market at grelen"
-            src="/assets/holding_hands.png"
-          />
           <Divider flexItem sx={{ marginTop: '50px', marginBottom: '50px' }}/>
           <ThemeProvider theme={contentTheme}>
             <Typography sx={{ fontSize: '1.25rem' }}>
-              More details around hotel block and schedule coming soon!
+            Formal invitations will be sent out for RSVPs. More details around hotel block and schedule coming soon.
             </Typography>
           </ThemeProvider>
           <Divider flexItem sx={{ marginTop: '50px', marginBottom: '50px' }}/>

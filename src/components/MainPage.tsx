@@ -45,13 +45,13 @@ export default function MainPage() {
             sx={{ position: 'relative' }}
           >
             <Box
-              // 1.044
               component="img"
               sx={{
+                marginTop: '-275px',
                 width: '800px',
                 height: '1200px',
               }}
-              alt="Market at grelen"
+              alt="Us in field"
               src="/assets/ad_field.jpg"
             />
             <ThemeProvider theme={theme}>
@@ -60,10 +60,10 @@ export default function MainPage() {
                 component="a"
                 sx={{
                   position: 'absolute',
-                  bottom: '3.5rem',
+                  bottom: '18rem',
                   fontFamily: 'TheSeasons',
                   fontWeight: 500,
-                  fontSize: { xs: '64px', sm: '80px' },
+                  fontSize: { xs: '42px', sm: '80px' },
                   fontStyle: 'italic',
                   lineHeight: 1,
                   letterSpacing: '.3rem',
@@ -71,16 +71,14 @@ export default function MainPage() {
                   textDecoration: 'none',
                 }}
               >
-                David & <br />
-                Amanda
+                David & Amanda
               </Typography>
-              <br />
               <Typography
                 variant="h6"
                 component="a"
                 sx={{
                   position: 'absolute',
-                  bottom: '2rem',
+                  bottom: '16rem',
                   fontFamily: 'TheSeasons',
                   fontWeight: 500,
                   fontSize: { xs: '20px', sm: '32px' },
