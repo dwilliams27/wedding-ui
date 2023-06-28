@@ -18,6 +18,7 @@ WORKDIR /usr/share/nginx/html
 
 RUN rm -rf *
 
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/build .
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

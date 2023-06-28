@@ -56,9 +56,33 @@ export default function OurStory() {
               <br /><br />
               Their first date was in a small Korean restaurant in Georgetown, DC, filled with laughter and too much spicy pork bulgogi. 
               Despite starting off long distance, their love continued to grow, fostered by Facetime calls and Amtrak trips. 
+              <Box
+                // 1.044
+                component="img"
+                sx={{
+                  marginTop: '10px',
+                  marginLeft: '200px',
+                  marginRight: '0',
+                  maxWidth: '70%'
+                }}
+                alt="David and amanda at Boldrock cider."
+                src="/assets/dav_am_br.jpg"
+              />
               <br /><br />
               After four years together, David proposed to Amanda in Maui, marking the beginning of a new chapter. 
               <br /><br />
+              <Box
+                // 1.044
+                component="img"
+                sx={{
+                  marginTop: '10px',
+                  marginLeft: '0',
+                  marginRight: '200px',
+                  maxWidth: '70%'
+                }}
+                alt="David and amanda in Haleakala national park."
+                src="/assets/hal_pics.jpeg"
+              />
               We are so excited to have you with us as we celebrate the start of our next adventure together!
             </Typography>
           </ThemeProvider>

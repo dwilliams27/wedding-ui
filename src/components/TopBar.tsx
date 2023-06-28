@@ -5,9 +5,10 @@ import { Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Slide
 import MenuIcon from '@mui/icons-material/Menu';
 import MuiAppBar from '@mui/material/AppBar';
 import ClearIcon from '@mui/icons-material/Clear';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Fonts } from '../utils/Fonts';
+import { Box } from '@mui/system';
 
 interface Props {
   children: React.ReactElement;
@@ -20,7 +21,7 @@ function HideOnScroll(props: Props) {
   });
 
   return (
-    <Slide onChange={(e: any) => {console.log(e)}} appear={false} direction="down" in={!trigger}>
+    <Slide onChange={(e: any) => {console.log(e)}} appear={false} direction='down' in={!trigger}>
       {children}
     </Slide>
   );
@@ -85,38 +86,47 @@ export default function TopBar() {
       <div style={{}}>
         <CssBaseline />
         <HideOnScroll>
-          <MuiAppBar sx={{ backgroundColor: "rgb(0, 0, 0, 0)", boxShadow: 0 }}>
+          <MuiAppBar sx={{ backgroundColor: 'rgb(0, 0, 0, 0)', boxShadow: 0 }}>
             <Toolbar sx={{ 
-                backgroundColor: displayBackground ? "#05200a" : "rgba(0, 0, 0, 0)",
-                transition: "all 0.5s ease",
-                WebkitTransition: "all 0.5s ease",
-                MozTransition: "all 0.5s ease"
+                backgroundColor: displayBackground ? '#05200a' : 'rgba(0, 0, 0, 0)',
+                transition: 'all 0.5s ease',
+                WebkitTransition: 'all 0.5s ease',
+                MozTransition: 'all 0.5s ease'
               }}
             disableGutters>
               <IconButton
-                color="inherit"
-                edge="start"
+                color='inherit'
+                edge='start'
                 onClick={() => navigateTo('/')}
                 sx={{ mr: { sm: 2 }, ml: 0.5 }}
               >
-                <img id='main-logo' src="favicon.ico" alt="logo" width="64" height="64"/>
+                <Box
+                  component='img'
+                  id='main-logo'
+                  sx={{
+                    width: '42px',
+                    height: '76px'
+                  }}
+                  alt='WW logo.'
+                  src={ displayBackground ? '/assets/2.png' : '/assets/1.png' }
+                />
               </IconButton>
               <IconButton
-                size="large"
-                color="inherit"
-                aria-label="menu"
+                size='large'
+                color='inherit'
+                aria-label='menu'
                 sx={{ 
                   mr: 2, 
                   marginLeft: 
                   'auto',
                   ...(open && { display: 'none' }),
-                  transition: "all 0.5s ease",
-                  WebkitTransition: "all 0.5s ease",
-                  MozTransition: "all 0.5s ease"
+                  transition: 'all 0.5s ease',
+                  WebkitTransition: 'all 0.5s ease',
+                  MozTransition: 'all 0.5s ease'
                 }}
                 onClick={handleDrawerOpen}
               >
-                <MenuIcon fontSize="inherit" sx={{...(!displayBackground && {color: "#05200a"})}}/>
+                <MenuIcon fontSize='inherit' sx={{...(!displayBackground && {color: '#05200a'})}}/>
               </IconButton>
             </Toolbar>
           </MuiAppBar>
@@ -126,8 +136,8 @@ export default function TopBar() {
           sx={{
             flexShrink: 0
           }}
-          variant="persistent"
-          anchor="top"
+          variant='persistent'
+          anchor='top'
           open={open}
         >
           <DrawerHeader sx={{ backgroundColor: '#e0ddd5' }}>
