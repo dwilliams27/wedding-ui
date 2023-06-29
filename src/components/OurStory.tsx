@@ -30,7 +30,7 @@ export default function OurStory() {
           marginLeft: 'auto',
           marginRight: 'auto',
           position: 'relative',
-          width: '80vw',
+          width: { xs: '80vw', lg: '60wv' },
           zIndex: 1
         }}>
           <Box
@@ -104,14 +104,63 @@ export default function OurStory() {
                 alt="Pics of David and Amanda."
                 src="/assets/overlapping_1.png"
               />
+              <Box
+                component="img"
+                sx={{
+                  position: 'absolute',
+                  left: { xs: '-50%', lg: '-30%' },
+                  marginTop: { xs: '-125px', lg: 0 },
+                  maxWidth: { xs: '85%', sm: '30%' },
+                  opacity: '0.3',
+                  transform: 'rotate(45deg)'
+                }}
+                alt="Florals."
+                src="/assets/f4.png"
+              />
               <br />
               Their first date was in a small Korean restaurant in Georgetown, DC, filled with laughter and too much spicy pork bulgogi. 
               Despite starting off long distance, their love continued to grow, fostered by Facetime calls and Amtrak trips. 
+              <Box
+                component="img"
+                sx={{
+                  position: 'absolute',
+                  right: { xs: '-50%', lg: '-30%' },
+                  marginTop: { xs: '-300px', lg: 0 },
+                  maxWidth: { xs: '70%', sm: '60%', lg: '30%' },
+                  opacity: '0.3',
+                  transform: 'rotate(-135deg)'
+                }}
+                alt="Florals."
+                src="/assets/f5.png"
+              />
               <br /><br />
               After four years together, David proposed to Amanda in Maui, marking the beginning of a new chapter. 
               <br /><br />
-              
+              <Box
+                component="img"
+                sx={{
+                  maxWidth: { xs: '170%', md: '100%', lg: '70%' },
+                  marginLeft: { xs: '-20%', md: '0', lg: '15%' },
+                  marginBottom: '10px',
+                  zIndex: 3
+                }}
+                alt="Pics of David and Amanda."
+                src="/assets/overlapping_2.png"
+              />
+              <br />
               We are so excited to have you with us as we celebrate the start of our next adventure together!
+              <Box
+                component="img"
+                sx={{
+                  position: 'absolute',
+                  left: { xs: '-20%', lg: '-10%' },
+                  marginTop: { xs: '-125px', lg: '-300px' },
+                  maxWidth: { xs: '85%', sm: '70%', lg: '30%' },
+                  opacity: '0.3'
+                }}
+                alt="Florals."
+                src="/assets/f6.png"
+              />
             </Typography>
           </ThemeProvider>
           <Divider flexItem sx={{ marginTop: '50px', marginBottom: '50px' }}/>
