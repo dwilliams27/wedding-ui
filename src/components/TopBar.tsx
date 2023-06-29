@@ -21,7 +21,7 @@ function HideOnScroll(props: Props) {
   });
 
   return (
-    <Slide onChange={(e: any) => {console.log(e)}} appear={false} direction='down' in={!trigger}>
+    <Slide appear={false} direction='down' in={!trigger}>
       {children}
     </Slide>
   );
