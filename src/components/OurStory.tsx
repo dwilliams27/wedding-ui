@@ -112,7 +112,8 @@ export default function OurStory() {
                   marginTop: { xs: '-125px', lg: 0 },
                   maxWidth: { xs: '85%', sm: '30%' },
                   opacity: '0.3',
-                  transform: 'rotate(45deg)'
+                  transform: 'rotate(45deg)',
+                  zIndex: -1
                 }}
                 alt="Florals."
                 src="/assets/f4.png"
