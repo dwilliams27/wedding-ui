@@ -153,7 +153,7 @@ export default function TopBar() {
             flexDirection: 'column', 
             marginTop: '-1px' 
           }}>
-            {[{ text: 'Our Story', page: '/our-story'}, { text: 'Venue', page: '/venue' }, { text: 'Additional Details', page: '/additional-details' }].map((link, index) => (
+            {[{ text: 'Our Story', page: '/our-story'}, { text: 'Venue', page: '/venue' }, { text: 'Hotels + Additional Details', page: '/additional-details' }].map((link, index) => (
               <ListItem key={link.text} disablePadding>
                 <ListItemButton onClick={() => navigateTo(link.page)}>
                   <ThemeProvider theme={theme}>
