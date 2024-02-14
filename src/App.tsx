@@ -4,6 +4,8 @@ import MainPage from './components/MainPage';
 import OurStory from './components/OurStory';
 import Venue from './components/Venue';
 import AdditionalDetails from './components/AdditionalDetails';
+import RsvpForm from './components/RSVP';
+import Travel from './components/Travel';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/venue" element={<Venue />} />
           <Route path="/additional-details" element={<AdditionalDetails />} />
+          <Route path="/rsvp" element={<RsvpForm />} />
+          <Route path="/travel" element={<Travel />} />
         </Routes>
       </Router>
     </div>
