@@ -8,7 +8,7 @@ import RsvpForm from './components/RSVP';
 import Travel from './components/Travel';
 import FAQ from './components/FAQ';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { COLOR_GREEN, DARK_GREEN } from './models/models';
+import { COLOR_GREEN, DARK_GREEN, HOVER_GREEN, SUBMIT_BUTTON_GREEN } from './models/models';
 
 const theme = createTheme({
   components: {
@@ -16,7 +16,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: COLOR_GREEN,
+            borderColor: 'green',
           },
         },
       },
@@ -24,15 +24,18 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          color: 'black', // Change default text color
+          color: 'black',
+          borderColor: 'black',
           '&:hover': {
-            // Optional: Change hover state styles if desired
-            backgroundColor: 'lightgreen',
+            backgroundColor: HOVER_GREEN,
           },
           '&.Mui-focusVisible': {
-            // Change focus outline color for Buttons
             boxShadow: `0 0 0 2px ${COLOR_GREEN}`,
           },
+          '&.MuiButton-containedPrimary': {
+            color: 'white',
+            backgroundColor: SUBMIT_BUTTON_GREEN,
+          }
         },
       },
     },
