@@ -17,7 +17,7 @@ interface Props {
 const routes = [
   { text: 'Our Story', page: '/our-story'}, 
   { text: 'Wedding & Events', page: '/venue' }, 
-  { text: 'Travel & Accommodations', page: '/additional-details' },
+  { text: 'Travel & Accommodations', page: '/travel' },
   { text: 'FAQ & Dress Code', page: '/faq' },
   { text: 'RSVP', page: '/rsvp' }
 ];

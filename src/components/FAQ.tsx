@@ -4,7 +4,7 @@ import { Stack } from "@mui/system";
 import { Divider, Fade, Typography, ThemeProvider, createTheme, Box, Link } from "@mui/material";
 import { Fonts } from "../utils/Fonts";
 
-export default function AdditionalDetails() {
+export default function FAQ() {
   const contentTheme = createTheme({
     typography: {
       fontFamily: Fonts.Abhaya,
@@ -30,7 +30,7 @@ export default function AdditionalDetails() {
         }}>
           <ThemeProvider theme={headerTheme}>
             <Typography sx={{ marginTop: '100px', fontSize: '3rem' }}>
-              ADDITIONAL DETAILS
+              FAQ and Dress Code
             </Typography>
           </ThemeProvider>
           <Divider flexItem sx={{ marginTop: '50px', marginBottom: '50px' }}/>

@@ -33,7 +33,7 @@ export default function Venue() {
           width: '80vw'
         }}>
           <ThemeProvider theme={theme}>
-            <Typography sx={{ marginTop: '75px', color: '#05200a', zIndex: 1 }}>
+            <Typography sx={{ marginTop: '4.5rem', color: '#05200a', zIndex: 1 }}>
               THE MARKET AT GRELEN
             </Typography>
           </ThemeProvider>

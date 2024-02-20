@@ -59,7 +59,7 @@ export default function OurStory() {
             src="/assets/f2.png"
           />
           <ThemeProvider theme={theme}>
-            <Typography sx={{ marginTop: '75px', color: '#05200a', zIndex: 1 }}>
+            <Typography sx={{ marginTop: '4.5rem', color: '#05200a', zIndex: 1 }}>
               OUR STORY
             </Typography>
           </ThemeProvider>
