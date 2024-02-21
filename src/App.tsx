@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from './components/MainPage';
 import OurStory from './components/OurStory';
 import Venue from './components/Venue';
-import AdditionalDetails from './components/AdditionalDetails';
 import RsvpForm from './components/RSVP';
 import Travel from './components/Travel';
-import FAQ from './components/FAQ';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { COLOR_GREEN, DARK_GREEN, HOVER_GREEN, SUBMIT_BUTTON_GREEN } from './models/models';
+import Events from './components/Events';
+import DressCode from './components/DressCode';
 
 const theme = createTheme({
   components: {
@@ -60,10 +60,10 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/our-story" element={<OurStory />} />
             <Route path="/venue" element={<Venue />} />
-            <Route path="/additional-details" element={<AdditionalDetails />} />
+            <Route path="/events" element={<Events />} />
             <Route path="/rsvp" element={<RsvpForm />} />
             <Route path="/travel" element={<Travel />} />
-            <Route path="/faq" element={<FAQ />} />
+            <Route path="/dress-code" element={<DressCode />} />
           </Routes>
         </Router>
       </ThemeProvider>
