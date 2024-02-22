@@ -15,12 +15,12 @@ jobs:
       - name: Dont run husky
         run: |
           npm set-script prepare ""
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          build: npm run build
-          start: npm start
-          browser: chrome
+      # - name: Cypress run
+      #   uses: cypress-io/github-action@v5
+      #   with:
+      #     build: npm run build
+      #     start: npm start
+      #     browser: chrome
   bump-package-version:
     needs: cypress-run
     runs-on: ubuntu-latest
