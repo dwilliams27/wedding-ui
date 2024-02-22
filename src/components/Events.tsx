@@ -22,7 +22,7 @@ const sunEvents: Event[] = [
 function genGridItemsForEvents(events: Event[]) {
   return (events.map((event, index) => (
     <Grid item xs={12} key={index}>
-      <Card sx={{maxWidth: '20rem'}}>
+      <Card sx={{ maxWidth: '20rem', margin: 'auto'}}>
         <CardContent>
           <Typography variant="h5" component="h2">
             {event.title}
@@ -68,10 +68,10 @@ export default function Events() {
           </ThemeProvider>
           <Divider flexItem sx={{ marginTop: '50px' }}/>
           <ThemeProvider theme={contentTheme}>
-            <Grid container spacing={2} style={{ padding: 20 }} justifyContent="center">
+            <Grid container spacing={2} style={{ padding: 20, display: 'flex' }} justifyContent="center">
               <Grid item xs={12}>
                 <ThemeProvider theme={contentTheme}>
-                  <Typography sx={{ fontSize: '2rem' }}>
+                  <Typography sx={{ fontSize: '2rem', margin: 'auto' }}>
                     Saturday
                   </Typography>
                 </ThemeProvider>
@@ -79,7 +79,7 @@ export default function Events() {
               {genGridItemsForEvents(satEvents)}
               <Grid item xs={12}>
                 <ThemeProvider theme={contentTheme}>
-                  <Typography sx={{ fontSize: '2rem' }}>
+                  <Typography sx={{ fontSize: '2rem', margin: 'auto' }}>
                     Sunday
                   </Typography>
                 </ThemeProvider>
