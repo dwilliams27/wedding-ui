@@ -120,7 +120,7 @@ const RsvpForm: React.FC = () => {
           ...formValues
         });
         console.log("Document written with ID: ", docRef.id);
-        setError(true);
+        setError(false);
         handleOpen();
       } catch (e) {
         console.error("Error adding document: ", e);
