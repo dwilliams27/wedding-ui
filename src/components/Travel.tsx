@@ -1,11 +1,11 @@
 import React from "react";
 import TopBar from "./TopBar";
 import { Box, Stack } from "@mui/system";
-import { Divider, Fade, Typography, ThemeProvider, createTheme, List, ListItem, ListItemText, ListItemAvatar, Grid, Avatar, Link } from "@mui/material";
+import { Divider, Fade, Typography, ThemeProvider, createTheme, List, ListItem, ListItemText, ListItemAvatar, Grid, Avatar, Link, Button } from "@mui/material";
 import { Fonts } from "../utils/Fonts";
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFilledOutlined';
-import { COLOR_GREEN } from "../models/models";
+import { COLOR_GREEN, DARK_GREEN } from "../models/models";
 
 export default function Travel() {
   const contentTheme = createTheme({
@@ -102,10 +102,14 @@ export default function Travel() {
               </List>
             </Typography>
           </ThemeProvider>
-          <Divider flexItem sx={{ marginTop: '50px', marginBottom: '50px' }}/>
-
+          <Divider flexItem sx={{ marginTop: '50px', marginBottom: '25px' }}/>
+          <ThemeProvider theme={contentTheme}>
+            <Typography sx={{ marginTop: '1rem', fontSize: '1.25rem' }}>
+              Transportation from the hotels to the venue will be provided.
+            </Typography>
+          </ThemeProvider>
           <ThemeProvider theme={theme}>
-            <Typography sx={{ marginTop: '4.5rem', color: '#05200a', zIndex: 1 }}>
+            <Typography sx={{ fontSize: { xs: '2.0rem', md: '2.5rem' }, marginTop: '4.5rem', color: '#05200a', zIndex: 1 }}>
               ACCOMMODATIONS
             </Typography>
           </ThemeProvider>
@@ -115,13 +119,19 @@ export default function Travel() {
               <Typography sx={{ fontSize: '1.25rem' }}>
                 You can book a room in one of our hotel blocks at:
               </Typography>
-              <Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
-                <Link target="_blank" rel="noopener noreferrer" href="https://www.omnihotels.com/hotels/charlottesville/weddings/amanda-wong-anddavid-williams-wrb-05252024" sx={{ mx: 1 }}>Omni Hotel Charlottesville</Link>
-                <Link target="_blank" rel="noopener noreferrer" href="https://www.hilton.com/en/book/reservation/deeplink/?ctyhocn=CHODNHT&groupCode=CHTWWW&arrivaldate=2024-05-24&departuredate=2024-05-27&cid=OM,WW,HILTONLINK,EN,DirectLink&fromId=HILTONLINKDIRECT" sx={{ mx: 1 }}>Home2 Suites Charlottesville</Link>
-              </Box>
-              <Typography sx={{ fontSize: '1.25rem' }}>
-                Transportation from the hotels to the venue will be provided.
-              </Typography>
+              <ThemeProvider theme={theme}>
+                <Typography sx={{ fontSize: { xs: '2.0rem', md: '2.5rem' }, marginTop: '1.5rem', marginBottom: '0.25rem', color: '#05200a', zIndex: 1 }}>
+                  Omni Hotel
+                </Typography>
+              </ThemeProvider>
+              <Button target="_blank" variant="outlined" rel="noopener noreferrer" href="https://www.omnihotels.com/hotels/charlottesville/weddings/amanda-wong-anddavid-williams-wrb-05252024" sx={{ mx: 1, fontStyle: 'italic', color: DARK_GREEN, borderColor: DARK_GREEN }}>Book now</Button>
+                
+              <ThemeProvider theme={theme}>
+                <Typography sx={{ fontSize: { xs: '2.0rem', md: '2.5rem' }, marginTop: '1.5rem', marginBottom: '0.25rem', color: '#05200a', zIndex: 1 }}>
+                  Home2 Suites
+                </Typography>
+              </ThemeProvider>
+              <Button target="_blank" variant="outlined" rel="noopener noreferrer" href="https://www.hilton.com/en/book/reservation/deeplink/?ctyhocn=CHODNHT&groupCode=CHTWWW&arrivaldate=2024-05-24&departuredate=2024-05-27&cid=OM,WW,HILTONLINK,EN,DirectLink&fromId=HILTONLINKDIRECT" sx={{ mx: 1, fontStyle: 'italic', color: DARK_GREEN, borderColor: DARK_GREEN }}>Book now</Button>
             </Box>
           </ThemeProvider>
           <Box sx={{ marginBottom: '10rem' }}></Box>
