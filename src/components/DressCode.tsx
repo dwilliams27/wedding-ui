@@ -29,9 +29,18 @@ export default function DressCode() {
           position: 'relative',
           width: '80vw'
         }}>
+          <Box
+            component="img"
+            sx={{
+              marginTop: { xs: '-5rem' },
+              width: { xs: '100vw', lg: '30vw' },
+            }}
+            alt="dress."
+            src="/assets/dress_code2.jpeg"
+          />
           <ThemeProvider theme={headerTheme}>
-            <Typography sx={{ marginTop: '100px', fontSize: '3rem', mb: '5rem' }}>
-              Dress Code
+            <Typography sx={{ marginTop: '-15rem', fontSize: '3rem', mb: '5rem', color: 'white' }}>
+              DRESS CODE
             </Typography>
           </ThemeProvider>
           <Box
@@ -40,6 +49,7 @@ export default function DressCode() {
             sx={{
               width: { xs: '396px', lg: '792px' },
               height: { xs: '467px', lg: '934px' },
+              marginTop: '20rem'
             }}
             alt="Garden Party"
             src="/assets/garden_party.png"
@@ -60,8 +70,8 @@ export default function DressCode() {
             // 1.092
             component="img"
             sx={{
-              width: { xs: '396px', lg: '792px' },
-              height: { xs: '432px', lg: '865px' },
+              width: { xs: '325px', lg: '792px' },
+              height: { xs: '355px', lg: '865px' },
               mt: '1rem'
             }}
             alt="Garden Party"

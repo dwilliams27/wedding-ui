@@ -4,8 +4,6 @@ import { Box, Stack } from "@mui/system";
 import { Divider, Fade, Typography, ThemeProvider, createTheme, List, ListItem, ListItemText, ListItemAvatar, Grid, Avatar, Link } from "@mui/material";
 import { Fonts } from "../utils/Fonts";
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
-import AirplaneTicketOutlinedIcon from '@mui/icons-material/AirplaneTicketOutlined';
-import FlightLandOutlinedIcon from '@mui/icons-material/FlightLandOutlined';
 import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFilledOutlined';
 import { COLOR_GREEN } from "../models/models";
 
@@ -37,8 +35,18 @@ export default function Travel() {
           position: 'relative',
           width: '80vw'
         }}>
+          <Box
+            component="img"
+            sx={{
+              marginTop: { xs: '-20rem', sm: '-5rem' },
+              minWidth: { xs: '100vw', sm: '40vw' },
+              maxHeight: { sm: '60vw'},
+            }}
+            alt="travel."
+            src="/assets/travel.jpeg"
+          />
           <ThemeProvider theme={theme}>
-            <Typography sx={{ marginTop: '4.5rem', color: '#05200a', zIndex: 1 }}>
+            <Typography sx={{ marginTop: { xs: '-40.5rem', sm: '-20rem', lg: '-40rem' }, marginBottom: { xs: '36.5rem', sm: '20rem', lg: '32rem' }, fontSize: { xs: '40px', lg: '80px' }, color: '#05200a', zIndex: 1 }}>
               TRAVEL
             </Typography>
           </ThemeProvider>
@@ -98,7 +106,7 @@ export default function Travel() {
 
           <ThemeProvider theme={theme}>
             <Typography sx={{ marginTop: '4.5rem', color: '#05200a', zIndex: 1 }}>
-              ACCOMIDATIONS
+              ACCOMMODATIONS
             </Typography>
           </ThemeProvider>
           <Divider flexItem sx={{ marginTop: '50px', marginBottom: '50px' }}/>
