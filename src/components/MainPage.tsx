@@ -4,6 +4,7 @@ import { Box, Fade, Stack, Typography, createTheme, responsiveFontSizes } from '
 import TheSeasons from '../fonts/theseasons-reg.ttf';
 import TopBar from './TopBar';
 import { ThemeProvider } from '@emotion/react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 export default function MainPage() {
   let theme = createTheme({
@@ -29,6 +30,19 @@ export default function MainPage() {
     },
   });
   theme = responsiveFontSizes(theme);
+
+  let [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    const reroute = searchParams.get('reroute');
+    console.log('Value of reroute:', reroute);
+    if(reroute === 'rsvp') {
+      navigate('/rsvp');
+    }
+    // Perform actions based on myParam
+  }, [searchParams]);
+
   return (
     <React.Fragment>
       <TopBar />
