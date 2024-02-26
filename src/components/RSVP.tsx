@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, MenuItem, FormControl, InputLabel, Select, FormHelperText, Box, Typography, Container, Grid, createTheme, ThemeProvider, Fade, Modal } from '@mui/material';
+import { Button, TextField, MenuItem, FormControl, InputLabel, Select, FormHelperText, Box, Typography, Container, Grid, createTheme, ThemeProvider, Fade, Modal, FormControlLabel } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
@@ -33,6 +33,8 @@ interface FormValues {
   guestName: string;
   guestFoodPreference: string;
   guestDietaryRestrictions: string;
+
+  coming: boolean;
 }
 
 interface FormErrors {
@@ -47,7 +49,8 @@ const initialFormValues: FormValues = {
   dietaryRestrictions: '',
   guestName: '',
   guestFoodPreference: 'none',
-  guestDietaryRestrictions: ''
+  guestDietaryRestrictions: '',
+  coming: true,
 };
 
 const initialErrorValues: FormErrors = {
@@ -111,6 +114,11 @@ const RsvpForm: React.FC = () => {
     setFormValues(updatedValues);
   };
 
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const updatedValues = { ...formValues, coming: !formValues.coming };
+    setFormValues(updatedValues);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
@@ -119,7 +127,6 @@ const RsvpForm: React.FC = () => {
           key: "value",
           ...formValues
         });
-        console.log("Document written with ID: ", docRef.id);
         setError(false);
         handleOpen();
       } catch (e) {
@@ -171,6 +178,28 @@ const RsvpForm: React.FC = () => {
               error={!!formErrors.name}
               helperText={formErrors.name}
             />
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              sx={{ mb: 2 }}
+            >
+              <FormControlLabel
+                label="Are you attending?"
+                labelPlacement="start"
+                control={
+                  <Checkbox
+                    name="coming" 
+                    checked={formValues.coming} 
+                    size="medium"
+                    onChange={handleCheckboxChange as any} 
+                    sx={{ '&.Mui-checked': {
+                      color: DARK_GREEN, // Color when checked
+                      borderRadius: 1 // Optional: adds border-radius to background
+                    }, }}
+                  />}
+              />
+            </Box>
             <FormControl fullWidth error={!!formErrors.foodPreference} sx={{ mb: 2 }}>
               <InputLabel>Food Preference</InputLabel>
               <Select
@@ -179,6 +208,7 @@ const RsvpForm: React.FC = () => {
                 value={formValues.foodPreference}
                 onChange={handleInputChange as any}
                 error={!!formErrors.foodPreference}
+                disabled={!formValues.coming}
               >
                 <MenuItem value="chicken">Parmesan Crusted Chicken</MenuItem>
                 <MenuItem value="salmon">Grilled Salmon</MenuItem>
@@ -194,6 +224,7 @@ const RsvpForm: React.FC = () => {
               name="dietaryRestrictions"
               value={formValues.dietaryRestrictions}
               onChange={handleInputChange}
+              disabled={!formValues.coming}
             />
             <TextField
               sx={{ mb: 2 }}
@@ -202,12 +233,14 @@ const RsvpForm: React.FC = () => {
               name="songRec"
               value={formValues.songRec}
               onChange={handleInputChange}
+              disabled={!formValues.coming}
             />
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '16px' }}>
               <Button
                 variant="outlined"
                 startIcon={showGuestFields ? <RemoveCircleOutlineIcon /> : <AddCircleOutlineIcon />}
                 onClick={handleAddGuest}
+                disabled={!formValues.coming}
               >
                 {showGuestFields ? "Remove Plus One" : "Add Plus One"}
               </Button>
@@ -221,6 +254,7 @@ const RsvpForm: React.FC = () => {
                   name="guestName"
                   onChange={handleInputChange}
                   value={formValues.guestName}
+                  disabled={!formValues.coming}
                 />
                 <FormControl fullWidth sx={{ mb: 2 }}>
                   <InputLabel>Guest Food Preference</InputLabel>
@@ -229,6 +263,7 @@ const RsvpForm: React.FC = () => {
                     name="guestFoodPreference"
                     value={formValues.guestFoodPreference}
                     onChange={handleInputChange as any}
+                    disabled={!formValues.coming}
                   >
                     <MenuItem value="chicken">Parmesan Crusted Chicken</MenuItem>
                     <MenuItem value="salmon">Grilled Salmon</MenuItem>
@@ -243,6 +278,7 @@ const RsvpForm: React.FC = () => {
                   name="guestDietaryRestrictions"
                   onChange={handleInputChange}
                   value={formValues.guestDietaryRestrictions}
+                  disabled={!formValues.coming}
                 />
               </Grid>
             )}
