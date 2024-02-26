@@ -9,7 +9,7 @@ First install packages via
 Project can then be started via
 `npm start`
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 Started running out of time, so code got a bit hackey 😅
