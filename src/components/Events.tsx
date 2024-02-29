@@ -3,20 +3,24 @@ import TopBar from "./TopBar";
 import { Stack } from "@mui/system";
 import { Divider, Fade, Typography, ThemeProvider, createTheme, Box, Link, Grid, Card, CardContent, Container, Paper, List, ListItem, ListItemText } from "@mui/material";
 import { Fonts } from "../utils/Fonts";
+import WineBarIcon from '@mui/icons-material/WineBar';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import CelebrationIcon from '@mui/icons-material/Celebration';
 
 interface Event { 
   title: string, 
   time: string, 
   description: string,
-  address?: string
+  address?: string,
+  icon?: any,
 };
 
 const satEvents: Event[] = [
-  { title: 'Welcome Event at Boldrock Cidery', time: '2:00 - 4:00 pm', description: 'Join us at Boldrock Cidery for a few drinks!', address: '1435 Carters Mountain Trail, Charlottesville, VA 22902' },
+  { title: 'Welcome Event at Bold Rock Carter Mountain', icon: <WineBarIcon />, time: '2:00 - 4:00 pm', description: 'Join us at Bold Rock Carter Mountain cidery for drinks and apple cider donuts!', address: '1435 Carters Mountain Trail, Charlottesville, VA 22902' },
 ];
 const sunEvents: Event[] = [
-  { title: 'Wedding Ceremony', time: '5:00 pm', description: 'Ceremony will be at the Market At Grelen.' },
-  { title: 'Wedding Reception', time: '7:00 pm', description: 'Reception will follow after cocktail hour at the Market.' },
+  { title: 'Wedding Ceremony', icon: <FavoriteBorderIcon />, time: '5:00 pm', description: 'Ceremony will be at the The Market at Grelen.', address: '15091 Yager Rd, Somerset, VA 22972' },
+  { title: 'Wedding Reception', icon: <CelebrationIcon />, time: '7:00 pm', description: 'Reception will follow after cocktail hour at the Market.' },
 ]
 
 function genGridItemsForDay(events: Event[]) {
@@ -32,7 +36,13 @@ function genGridItemsForDay(events: Event[]) {
       </Grid>
       <Grid item xs={9} sx={{ marginBottom: '3rem' }}>
         <Typography variant="body1" sx={{ textAlign: 'left', fontSize: { xs: '1rem', md: '1.5rem'} }}>
-          {event.title}
+          <strong>{event.title} </strong><span style={{ verticalAlign: 'middle' }}>{event.icon}</span>
+          <br />
+          <Container sx={{ fontSize: { xs: '0.85rem', md: '1.4rem'}, paddingLeft: '0 !important' }}>
+            <a href={`https://www.google.com/maps/search/?api=1&query=${event.address}`} target="_blank" rel="noreferrer">
+              {event.address}
+            </a>
+          </Container>
           <br />
           {event.description}
         </Typography>
