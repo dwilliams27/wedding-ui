@@ -14,7 +14,7 @@ interface Event {
   address?: string,
   icon?: any,
 };
-
+ 
 const satEvents: Event[] = [
   { title: 'Welcome Event at Bold Rock Carter Mountain', icon: <WineBarIcon />, time: '2:00 - 4:00 pm', description: 'Join us at Bold Rock Carter Mountain cidery for drinks and apple cider donuts!', address: '1435 Carters Mountain Trail, Charlottesville, VA 22902' },
 ];
