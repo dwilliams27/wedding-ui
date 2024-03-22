@@ -44,7 +44,7 @@ export default function Registry() {
             </Typography>
             <Divider flexItem sx={{ marginTop: '50px', marginBottom: '50px' }}/>
             <Typography sx={{ fontSize: '1.25rem', marginBottom: '50px' }}>
-              We do not have a traditional registry set up, but if you would like to contribute towards our honeymoon, we'd be so grateful! We will be spending 3 weeks flying across the entire globe, visiting France, Belgium, The Netherlands, Thailand, and Japan :)
+              We do not have a traditional registry set up, but if you would like to contribute towards our honeymoon, we'd be so grateful!
               <br></br>
               <br></br>
               If you'd like to contribute, feel free to either bring cash to the wedding itself, venmo us at @David-Williams-53 or @Amanda-Wong-9, or via <a href="https://paypal.me/davidamandahoneymoon" target="_blank">this paypal link</a>.
