@@ -19,7 +19,8 @@ const routes = [
   { text: 'Wedding & Events', page: '/events' }, 
   { text: 'Travel & Accommodations', page: '/travel' },
   { text: 'Dress Code', page: '/dress-code' },
-  { text: 'RSVP', page: '/rsvp' }
+  { text: 'RSVP', page: '/rsvp' },
+  { text: 'Registry', page: '/registry' }
 ];
 
 function HideOnScroll(props: Props) {

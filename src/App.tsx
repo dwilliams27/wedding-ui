@@ -9,6 +9,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { COLOR_GREEN, DARK_GREEN, HOVER_GREEN, SUBMIT_BUTTON_GREEN } from './models/models';
 import Events from './components/Events';
 import DressCode from './components/DressCode';
+import Registry from './components/Registry';
 
 const theme = createTheme({
   components: {
@@ -64,6 +65,7 @@ function App() {
             <Route path="/rsvp" element={<RsvpForm />} />
             <Route path="/travel" element={<Travel />} />
             <Route path="/dress-code" element={<DressCode />} />
+            <Route path="/registry" element={<Registry />} />
           </Routes>
         </Router>
       </ThemeProvider>
