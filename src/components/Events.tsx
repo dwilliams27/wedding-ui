@@ -4,7 +4,6 @@ import { Stack } from "@mui/system";
 import { Divider, Fade, Typography, ThemeProvider, createTheme, Box, Link, Grid, Card, CardContent, Container, Paper, List, ListItem, ListItemText } from "@mui/material";
 import { Fonts } from "../utils/Fonts";
 import { FaBus } from "react-icons/fa";
-import CelebrationIcon from '@mui/icons-material/Celebration';
 import { GiLinkedRings } from "react-icons/gi";
 import { CiApple } from "react-icons/ci";
 import { PiCheersLight } from "react-icons/pi";
@@ -19,7 +18,7 @@ interface Event {
 };
 
 const satEvents: Event[] = [
-  { title: 'Welcome Event at Bold Rock Carter Mountain', icon: <CiApple />, time: '2:00 - 4:00 pm', description: 'Join us at Bold Rock Carter Mountain cidery for drinks and apple cider donuts!', addresses: ['1435 Carters Mountain Trail, Charlottesville, VA 22902'] },
+  { title: 'Welcome Event at Bold Rock Carter Mountain', icon: <CiApple />, time: '2:00 - 4:00 pm', description: 'Join us at Bold Rock Carter Mountain cidery for drinks and apple cider donuts! We will have a few tables outside, look for balloons.', addresses: ['1435 Carters Mountain Trail, Charlottesville, VA 22902'] },
 ];
 const sunEvents: Event[] = [
   { title: 'Transportation to Wedding', icon: <FaBus />, time: '4:00 pm', description: 'Busses will leave promptly at 4:05, if you miss the bus you will need to find your own transportation to the venue.', descriptionCss: { textDecoration: 'underline' }, addresses: ['212 Ridge McIntire Rd, Charlottesville, VA 22903'] },
