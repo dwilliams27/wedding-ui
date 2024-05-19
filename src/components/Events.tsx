@@ -61,7 +61,7 @@ function genGridItemsForDay(events: Event[]) {
         </Typography>
       </Grid>
     </Grid>
-  )));
+  ))); 
 }
 
 export default function Events() {
