@@ -18,10 +18,10 @@ interface Event {
 };
 
 const satEvents: Event[] = [
-  { title: 'Welcome Event at Bold Rock Carter Mountain', icon: <CiApple />, time: '2:00 - 4:00 pm', description: 'Join us at Bold Rock Carter Mountain cidery for drinks and apple cider donuts! We will have a few tables outside, look for balloons.', addresses: ['1435 Carters Mountain Trail, Charlottesville, VA 22902'] },
+  { title: 'Welcome Event at Bold Rock Carter Mountain', icon: <CiApple />, time: '2:00 - 4:00 pm', description: 'Join us at Bold Rock Carter Mountain cidery for drinks and apple cider donuts! Dress casually, we will have a few tables outside, look for balloons.', addresses: ['1435 Carters Mountain Trail, Charlottesville, VA 22902'] },
 ];
 const sunEvents: Event[] = [
-  { title: 'Transportation to Wedding', icon: <FaBus />, time: '4:00 pm', description: 'Busses will leave promptly at 4:05, if you miss the bus you will need to find your own transportation to the venue.', descriptionCss: { textDecoration: 'underline' }, addresses: ['212 Ridge McIntire Rd, Charlottesville, VA 22903'] },
+  { title: 'Transportation to Wedding', icon: <FaBus />, time: '3:50 pm', description: 'Busses will leave promptly at 4:00, if you miss the bus you will need to find your own transportation to the venue.', descriptionCss: { textDecoration: 'underline' }, addresses: ['212 Ridge McIntire Rd, Charlottesville, VA 22903'] },
   { title: 'From OMNI', description: 'Pickup for guests staying at the Omni Hotel is at the Water Street Bus pickup location just outside of the hotel.', addresses: ['212 Ridge McIntire Rd, Charlottesville, VA 22903'] },
   { title: 'From Home2Suites', description: 'Pickup for guests staying at the Home2Suites will be at the hotel.', addresses: ['201 Monticello Ave, Charlottesville, VA 22902'] },
   { title: 'Wedding Ceremony', icon: <GiLinkedRings />, time: '5:00 pm', description: 'Ceremony will be at the The Market at Grelen.', addresses: ['15091 Yager Rd, Somerset, VA 22972'] },
