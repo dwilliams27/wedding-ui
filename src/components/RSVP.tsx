@@ -66,13 +66,6 @@ function initFirebase() {
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyBIf92gSjaY-Tfd1PPBJsniy9Yjc4pLYHQ",
-    authDomain: "wedding-53c5b.firebaseapp.com",
-    projectId: "wedding-53c5b",
-    storageBucket: "wedding-53c5b.appspot.com",
-    messagingSenderId: "550672055509",
-    appId: "1:550672055509:web:1d0e3a6825aee0fd66365c",
-    measurementId: "G-03MEJGM3K9"
   };
 
   // Initialize Firebase
@@ -127,6 +120,7 @@ const RsvpForm: React.FC = () => {
           key: "value",
           ...formValues
         });
+        
         setError(false);
         handleOpen();
       } catch (e) {
